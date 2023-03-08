@@ -38,11 +38,27 @@ const memberDom = document.getElementsByClassName('member');
 
 for(let i = 0 ; i < ourTeam.length; i++){
     const people = ourTeam[i];
+    
+    const card = createCard();
+
 
     for(let key in people) {
         console.log(key +' '+ people[key]);
-        containerDom.innerHTML+=`<div class="box"><span>${key}</span> <span>${people[key]}</span></div>`;
-
+        const cardInfo = createSpan();
+        cardInfo.innerHTML=key +' '+ people[key];
+        card.append(cardInfo);
     }
-     
+     containerDom.append(card);
+}
+
+function createCard(){
+    const card = document.createElement('div');
+    card.classList.add('card');
+    return card;
+}
+
+function createSpan(){
+    const cardInfo = document.createElement('div');
+    cardInfo.classList.add('card-info');
+    return cardInfo;
 }
