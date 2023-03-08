@@ -35,12 +35,14 @@ const containerDom = document.getElementById('container');
 
 for(let i = 0 ; i < ourTeam.length; i++){
     const people = ourTeam[i];
-    containerDom.innerHTML+=`<div class="card">
-                                <span>Nome</span> 
-                                <span>${people['nome']}</span>
-                                <span>Ruolo</span> 
-                                <span>${people['ruolo']}</span>
-                                <img src="img/${people['foto']}" alt="${people['nome']}">
-                            </div>`;
 
+    for(let key in people) {
+        console.log(key +' '+ people[key]);
+    }
+    
+    containerDom.innerHTML+=`<div class="card">
+                                <img src="img/${people['foto']}" alt="${people['nome']}">
+                                <p>${people['nome']}</p>
+                                <p>${people['ruolo']}</p>
+                            </div>`;
 }
