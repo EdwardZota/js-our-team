@@ -30,3 +30,12 @@ const ourTeam = [
         'foto':'barbara-ramos-graphic-designer.jpg'
     }
 ];
+
+
+for(let i = 0 ; i < ourTeam.length; i++){
+    const people = ourTeam[i];
+
+    for(let key in people) {
+        console.log(key +' '+ people[key]);
+    }
+}
