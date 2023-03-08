@@ -31,11 +31,18 @@ const ourTeam = [
     }
 ];
 
+const containerDom = document.getElementById('container');
+
+const memberDom = document.getElementsByClassName('member');
+
 
 for(let i = 0 ; i < ourTeam.length; i++){
     const people = ourTeam[i];
 
     for(let key in people) {
         console.log(key +' '+ people[key]);
+        containerDom.innerHTML+=`<div class="box"><span>${key}</span> <span>${people[key]}</span></div>`;
+
     }
+     
 }
